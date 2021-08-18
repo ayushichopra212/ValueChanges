@@ -9,10 +9,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
   
   title = 'ValueChanges';
+  feature = '';
 
   reactiveForm = new FormGroup({
     firstname: new FormControl('', [Validators.required]),
-    lastname: new FormControl(),
     address: new FormGroup({
       city: new FormControl(),
       street: new FormControl(),
@@ -24,5 +24,13 @@ export class AppComponent implements OnInit {
     console.log(this.reactiveForm.value);
   }
   ngOnInit(){
+    // this.reactiveForm.get('firstname').valueChanges.subscribe(data =>{
+    //   this.feature = data;
+    //   console.log(data);
+    // })
+    this.reactiveForm.valueChanges.subscribe(data=>{
+      
+      console.log(data);
+    })
   }
 }
