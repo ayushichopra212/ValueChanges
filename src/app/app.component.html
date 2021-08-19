@@ -1,4 +1,4 @@
-<h3>{{title}}</h3>
+<!-- <h3>{{title}}</h3>
  
 <div style="float: left; width:50%;">
  
@@ -7,9 +7,9 @@
     <p>
       <label for="firstname">First Name </label>
       <input type="text" id="firstname" name="firstname" formControlName="firstname">
-      <!-- <label for="lastname">Last Name </label>
+ <label for="lastname">Last Name </label>
       <input type="text" id="lastname" name="lastname" formControlName="lastname"> -->
-    </p>
+<!-- </p>
  
     <div formGroupName="address">
  
@@ -20,13 +20,13 @@
         <input type="text" class="form-control" name="street" formControlName="street">
         <label for="pincode">Pin Code</label>
         <input type="text" class="form-control" name="pincode" formControlName="pincode">
-      </p>
+      </p> -->
+
+<!-- </div>
  
-    </div>
  
- 
-    <button>Submit</button>
-    <!-- <div>
+    <button>Submit</button> -->
+<!-- <div>
       <button type="button" (click)="setValue()">SetValue</button>
       <button type="button" (click)="setAddress()">Address</button>
       <button type="button" (click)="setFirstname()">First Name</button>
@@ -39,9 +39,9 @@
       <button type="button" (click)="withouEmitEvent()">Without EmitEvent</button>
       <button type="button" (click)="withEmitEvent()">With EmitEvent</button>
     </div> -->
- 
-  </form>
-</div>
+
+<!-- </form>
+</div> -->
 <!-- <div style="float: right; width:50%;">
  
   <h3>Form Status</h3>
@@ -60,6 +60,17 @@
   {{reactiveForm.value |json}}
  
 </div> -->
-<div>
+<!-- <div>
   Value changes i got are : {{feature}}
-</div>
+</div> -->
+
+<form [formGroup]="form">
+
+  <label>Miles</label>
+  <input type="number" class="form-control" formControlName="miles"> <br>
+  <label>Rate per mile</label>
+  <input type="number" value="{{ ratePerMile }}" class="form-control" formControlName="rate"> <br>
+  <label>Total rate</label>
+  <input type="number" value="{{ initialRate }}" class="form-control" formControlName="total">
+
+</form>
